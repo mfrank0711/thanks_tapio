@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farewell to Tapio</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: "Courier New", Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .typewriter {
+            white-space: pre-wrap;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            border: 2px solid #ddd;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 12px; /* Rounded corners */
+            width: 800px;
+            height: 600px; /* Fixed height */
+            overflow-y: auto; /* Scrollable content */
+        }
+
+        /* Modern scroll bar */
+        .typewriter::-webkit-scrollbar {
+            width: 10px;
+        }
+        .typewriter::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .typewriter::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        .typewriter::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="typewriter" id="typewriter"></div>
+    <script>
+        const text = `Subject: Thank You, Tapio  
+
+Dear Tapio,  
+
+As we both close this chapter at Nordcloud, I’ve been reflecting on the incredible journey we've shared over the past six years. Especially in the last three years, as things became heavier, your leadership and camaraderie made all the difference.  
+
+Together, we built something remarkable in the Global Sales Practice. I’m particularly proud of how the Solution Practice and Nordcloud Academy evolved under our guidance. Over 1,000 people upskilled with our processes—it’s incredible to think of the impact we made. The Solution Legend Training earlier this year was a true highlight, proving that all the hard work was worth it. Sharing those moments brought both professional achievement and genuine joy.  
+
+Leaving Nordcloud isn’t easy, but as we both know, the changes post-acquisition made it clear that it was time for a new chapter. Even so, the memories and successes we created together will always stay with me.  
+
+As a small token of appreciation for all those late-night brainstorming sessions, endless sales strategies, and, of course, those pool billiard games (which you always won!), you’ll soon receive a package with two bottles of Eccellenza wine. This red gem is rich and bold, with hints of dark berries, chocolate, and spice—complex yet perfectly balanced, much like the challenges we tackled together. I hope you enjoy it as a celebration of the great times we had.  
+
+Tapio, thank you for always being open, fair, and good to me. Your guidance and humor during tough times, especially during those trainings, left a lasting impression. I’ll miss working with you but look forward to staying in touch and hearing about your next adventures.  
+
+Cheers to you, my friend. Let’s share a toast one day soon—though maybe not over pool, as we both know how that’ll end!  
+
+Take care,  
+Markus`;
+        
+        const typewriterElement = document.getElementById('typewriter');
+        let index = 0;
+
+        function typeEffect() {
+            if (index < text.length) {
+                typewriterElement.innerHTML += text[index];
+                typewriterElement.scrollTop = typewriterElement.scrollHeight; // Auto-scroll to the bottom
+                index++;
+                setTimeout(typeEffect, 50); // Adjust speed here
+            }
+        }
+
+        typeEffect();
+    </script>
+</body>
+</html>
